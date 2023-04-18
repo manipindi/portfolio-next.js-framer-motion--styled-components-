@@ -6,6 +6,11 @@ const CardWrap: any = styled.div`
   height: 620px;
   background-image: url(${({ bgImg }: any) => bgImg});
   background-size: cover;
+
+  @media screen and (max-width: 420px){
+    width: 100%;
+    height: 360px;
+  }
 `;
 
 export default function WorkCard({ img }: any) {

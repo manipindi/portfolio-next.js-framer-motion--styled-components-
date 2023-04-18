@@ -7,6 +7,8 @@ const FooterContainer = styled.div`
   padding: 75px 49px;
   background-color: aliceblue;
 
+  
+
   .name{
     margin-bottom: 10px;
   }
@@ -47,6 +49,19 @@ const FooterContainer = styled.div`
     }
     .me{
       margin-right: 80px;
+    }
+  }
+
+  @media screen and (max-width: 420px){
+    padding: 16px;
+
+    .footer-items{
+      flex-direction: column;
+      gap: 20px;
+
+      .me{
+        margin-right: 0;
+      }
     }
   }
 `;

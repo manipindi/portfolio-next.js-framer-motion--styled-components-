@@ -15,6 +15,11 @@ const Circle: any = styled(motion.div)`
   justify-content: center;
   align-items: center;
   color: white;
+
+  @media screen and (max-width: 420px){
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export default function VennBall({children, ...rest}:any) {

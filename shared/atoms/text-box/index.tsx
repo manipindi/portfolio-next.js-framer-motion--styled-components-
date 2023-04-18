@@ -1,8 +1,4 @@
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
@@ -13,6 +9,14 @@ const Box = styled(motion.div)`
   text-align: right;
   font-weight: 300;
   margin-bottom: 300px;
+
+  @media screen and (max-width: 420px) {
+    width: 300px;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 100px;
+    /* transform: none !important; */
+  }
 `;
 
 const boxVariants = {
@@ -34,32 +38,16 @@ export default function TextBox({
   children,
   direction,
   boxDirections,
+  scrollYProgress,
+  positions,
+  values,
   ...rest
 }: any) {
-  const { animate, style } = rest;
-  const { scrollY } = useScroll();
-  const x = useTransform(
-    scrollY,
-    boxDirections ? boxDirections : [0, 0],
-    direction === "left"
-      ? [0, 250]
-      : direction === "right"
-      ? [1000, 880]
-      : [0, 250]
-  );
-  const opacity = useTransform(
-    scrollY,
-    boxDirections ? boxDirections : [0, 0],
-    [0, 1]
-  );
+  const { style } = rest;  
 
-  return (
-    <Box
-      style={{ translateX: x, opacity: opacity, ...style }}
-      variants={boxVariants}
-      animate={animate}
-    >
-      {children}
-    </Box>
-  );
+  const scrollXVal = useTransform(scrollYProgress, positions, values);
+
+  const opacity = useTransform(scrollYProgress, positions, [0, 1]);
+
+  return <Box style={{ ...style, x: scrollXVal, opacity }}>{children}</Box>;
 }

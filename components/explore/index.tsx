@@ -20,12 +20,18 @@ const CardContentWrapper = styled.div`
   position: relative;
 `;
 
-const ContentWrapper:any = styled.div`
+const ContentWrapper: any = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
   margin-bottom: 180px;
-  flex-direction: ${({position}:any)=> position === "left" ? "row-reverse" : "row"};
+  flex-direction: ${({ position }: any) =>
+    position === "left" ? "row-reverse" : "row"};
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column-reverse;
+    margin-bottom: 100px;
+  }
 `;
 
 export default function Explore() {
@@ -54,19 +60,27 @@ export default function Explore() {
             {!!cardsData &&
               !!cardsData.length &&
               cardsData.map((cardData) => (
-                <ContentWrapper key={cardData.heading} position = {cardData.position}>
-                  <CardContent  position={cardData.position} tag={cardData.tag} heading={cardData.heading} content={cardData.content} />
-                  <WorkCard img={cardData.img}/>
+                <ContentWrapper
+                  key={cardData.heading}
+                  position={cardData.position}
+                >
+                  <CardContent
+                    position={cardData.position}
+                    tag={cardData.tag}
+                    heading={cardData.heading}
+                    content={cardData.content}
+                  />
+                  <WorkCard img={cardData.img} />
                 </ContentWrapper>
               ))}
           </CardContentWrapper>
         </ExploreContent>
 
-        <WorkWithMe/>
+        <WorkWithMe />
 
-        <GetInTouch/>
+        <GetInTouch />
 
-        <Footer/>
+        <Footer />
       </ExploreContentWrapper>
     </ExploreWrapper>
   );

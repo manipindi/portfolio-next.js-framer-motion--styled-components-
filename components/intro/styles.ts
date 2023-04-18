@@ -6,7 +6,10 @@ export const StyledSection = styled.section`
   background-image: url("https://assets.website-files.com/5e18a1cc86ccdc5d5a0d353d/5ea6f258e4a9f9ebe47d31e5_homepage-hero-w3award.jpg");
   color: white;
   padding: 3rem 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
+  overflow: hidden;
 
   .scroll-tag{
     position: absolute;
@@ -22,5 +25,9 @@ export const StyledSection = styled.section`
     height: 80px;
     border-radius: 50px;
     background-color: white;
+  }
+
+  @media screen and (max-width: 420px){
+    padding: 32px;
   }
 `;

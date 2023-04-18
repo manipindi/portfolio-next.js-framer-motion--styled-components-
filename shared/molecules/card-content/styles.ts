@@ -47,6 +47,18 @@ export const Content:any = styled.div`
       }
     `}
   }
+
+  @media screen and (max-width: 420px){
+   .content-wrapper{
+     max-width:360px;
+     padding-right: 0;
+     padding-left:0;
+     text-align:left;
+     .link-wrapper{
+        justify-content: flex-start;
+      }
+   }
+  }
 `;
 
 export const StyledLink = styled(Link)`

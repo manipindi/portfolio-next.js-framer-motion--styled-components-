@@ -1,6 +1,6 @@
 import TextBox from "@/shared/atoms/text-box";
 import { motion, useScroll, useTransform } from "framer-motion";
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import InfoContent from "./info-content";
 import Explore from "../explore";
@@ -25,6 +25,10 @@ const Circle = styled(motion.div)`
   margin-left: auto;
   margin-right: auto;
   z-index: -1;
+
+  @media screen and (max-width: 840px){
+    display: none;
+  }
 `;
 
 export const Intersector = styled(motion.div)`
@@ -40,18 +44,26 @@ export const Intersector = styled(motion.div)`
   background-color: white;
   transform-origin: top;
   z-index: 10;
+
+  @media screen and (max-width: 820px){
+    display: none;
+  }
 `;
 
 export default function Information() {
-  const { scrollY } = useScroll();
+  const Inforef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target : Inforef,
+    offset : ["start end", "start start"]
+  });
   const scaleIM = useTransform(
-    scrollY,
-    [0, 50, 100, 200, 300, 400, 500, 600],
+    scrollYProgress,
+    [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.9],
     [1, 2, 3, 4, 5, 7, 9, 12]
   );
 
   return (
-    <InformationWrapper>
+    <InformationWrapper ref={Inforef}>
       <Circle style={{ scale: scaleIM }} />
       <InfoContent />
     </InformationWrapper>

@@ -8,6 +8,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 420px){
+    min-height: 70vh;
+  }
 `;
 
 const Content = styled(motion.div)`
@@ -37,6 +41,18 @@ const Content = styled(motion.div)`
     border: none;
     cursor: pointer;
     margin-top: 56px;
+  }
+
+  @media screen and (max-width: 420px){
+    .tag{
+      font-size: 12px;
+    }
+    .heading{
+      font-size: 36px;
+    }
+    .get-in-touch-btn{
+      margin-top: 36px;
+    }
   }
 `;
 

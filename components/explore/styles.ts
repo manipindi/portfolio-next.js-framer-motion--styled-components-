@@ -12,7 +12,6 @@ export const ExploreContentWrapper = styled(motion.div)`
   margin-left: auto;
   margin-right: auto;
   transform-origin: top;
-  
 `;
 
 export const ExploreWrapper = styled(motion.div)`
@@ -33,13 +32,25 @@ export const InterSector = styled(motion.div)`
   bottom: 0;
   margin-left: auto;
   margin-right: auto;
+  
+  @media screen and (max-width: 1028px){
+    display: none;
+  }
 `;
 
 export const StyledHeader = styled(motion.h4)`
   font-size: 50px;
   text-align: center;
+
+  @media screen and (max-width: 420px) {
+    font-size: 36px;
+  }
 `;
 
 export const ExploreContent = styled(motion.div)`
   margin-top: 120vh;
+
+  @media screen and (max-width: 420px) {
+    padding: 16px;
+  }
 `;

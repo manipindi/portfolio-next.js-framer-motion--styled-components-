@@ -2,52 +2,83 @@ import TextBox from "@/shared/atoms/text-box";
 import React, { useEffect, useRef, useState } from "react";
 import { Intersector } from "..";
 import { useScroll, useTransform } from "framer-motion";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
+import styled from "styled-components";
+
+const InfoContentWrapper = styled(motion.div)`
+  padding-top: 15rem;
+  padding-bottom: 6rem;
+  overflow: hidden;
+
+  @media screen and (max-width: 420px) {
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+  }
+`;
 
 export default function InfoContent() {
-    const contentRef = useRef(null)
+  const contentRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: contentRef
-  });  
+    target: contentRef,
+    offset: ["start center", "end end"],
+  });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    let mql = window.matchMedia("(max-width: 450px)");
+    let tql = window.matchMedia("(max-width: 840px)");
+    setIsMobile(mql?.matches);
+    setIsTablet(tql?.matches);
+  }, []);
 
   return (
-    <motion.div ref={contentRef} style={{paddingTop:"15rem", paddingBottom:"6rem"}}> 
-      <Intersector style={{scaleY:scrollYProgress}}/>
+    <InfoContentWrapper ref={contentRef}>
+      <Intersector style={{ scaleY: scrollYProgress }} />
       <TextBox
-        boxDirections={[600, 800]}
-        animate={"visibleleft"}
-        direction="left"
+        scrollYProgress={scrollYProgress}
+        positions={[0, 0.25]}
+        values = {isMobile ? ["0%", "18%"] : isTablet ? ["0%", "80%"] : ["50%", "100%"] }
+        style={isTablet || isMobile ? { textAlign: "center" } : {}}
       >
         <h4>
           We have the expertise of a traditional agency with the agility of a
           startup.
         </h4>
       </TextBox>
+
       <TextBox
-        boxDirections={[900, 1100]}
-        animate={"visibleright"}
-        direction="right"
-        style={{ textAlign: "left" }}
+        scrollYProgress={scrollYProgress}
+        positions={[0, 0.5]}
+        values = {isMobile ? ["50%", "18%"] : isTablet ? ["90vw", "30vw"] : ["70vw", "55vw"]}
+        style={
+          isTablet || isMobile ? { textAlign: "center" } : { textAlign: "left" }
+        }
       >
         <h4>No nonsense. Just great products and great people.</h4>
       </TextBox>
 
       <TextBox
-        boxDirections={[1200, 1400]}
-        animate={"visibleleft"}
-        direction="left"
+        positions={[0, 0.75]}
+        values = {isMobile ? ["0%", "18%"] : isTablet ? ["0%", "80%"] : ["50%", "100%"] }
+        scrollYProgress={scrollYProgress}
+        style={isTablet || isMobile ? { textAlign: "center" } : {}}
       >
         <h4>Our partners feel the difference and our work shows it.</h4>
       </TextBox>
 
       <TextBox
-        boxDirections={[1500, 1700]}
-        animate={"visibleright"}
-        direction="right"
-        style={{ textAlign: "left" }}
+        positions={[0, 1]}
+        values = {isMobile ? ["50%", "18%"] : isTablet ? ["90vw", "30vw"] : ["70vw", "55vw"]}
+        style={
+          isTablet || isMobile ? { textAlign: "center" } : { textAlign: "left" }
+        }
+        scrollYProgress={scrollYProgress}
       >
         <h4>Let&apos;s ditch the rule book together.</h4>
       </TextBox>
-    </motion.div>
+    </InfoContentWrapper>
   );
 }

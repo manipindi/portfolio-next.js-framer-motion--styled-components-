@@ -27,4 +27,21 @@ export const IntroContentWrap = styled(motion.div)`
       z-index: -1;
     }
   }
+
+  @media screen and (max-width: 420px){
+    width: auto;
+    font-size: 21px;
+    line-height: 50px;
+    text-align: center;
+
+    .inline-element{
+      padding: 0 13px;
+    }
+  }
+  @media screen and (max-width: 380px){
+    font-size: 19px;
+    .inline-element{
+      padding: 0 11px;
+    }
+  }
 `;

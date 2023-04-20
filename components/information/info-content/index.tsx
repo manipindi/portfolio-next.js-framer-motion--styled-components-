@@ -44,8 +44,7 @@ export default function InfoContent() {
         style={isTablet || isMobile ? { textAlign: "center" } : {}}
       >
         <h4>
-          We have the expertise of a traditional agency with the agility of a
-          startup.
+          Building scalable web applications from future.
         </h4>
       </TextBox>
 
@@ -57,7 +56,7 @@ export default function InfoContent() {
           isTablet || isMobile ? { textAlign: "center" } : { textAlign: "left" }
         }
       >
-        <h4>No nonsense. Just great products and great people.</h4>
+        <h4>No nonsense. Just great products with great speed.</h4>
       </TextBox>
 
       <TextBox
@@ -66,7 +65,7 @@ export default function InfoContent() {
         scrollYProgress={scrollYProgress}
         style={isTablet || isMobile ? { textAlign: "center" } : {}}
       >
-        <h4>Our partners feel the difference and our work shows it.</h4>
+        <h4>My customers feel the difference and my work shows it.</h4>
       </TextBox>
 
       <TextBox
@@ -77,7 +76,7 @@ export default function InfoContent() {
         }
         scrollYProgress={scrollYProgress}
       >
-        <h4>Let&apos;s ditch the rule book together.</h4>
+        <h4>Let&apos;s collaborate and build great products together.</h4>
       </TextBox>
     </InfoContentWrapper>
   );

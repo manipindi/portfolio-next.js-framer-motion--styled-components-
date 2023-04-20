@@ -14,6 +14,7 @@ import { cardsData } from "@/utils/card-data-explore";
 import WorkWithMe from "../work-wth-me";
 import GetInTouch from "../get-in-touch";
 import Footer from "../footer";
+import SkillSetComposition from "../skill-set";
 
 const CardContentWrapper = styled.div`
   margin-top: 500px;
@@ -70,11 +71,13 @@ export default function Explore() {
                     heading={cardData.heading}
                     content={cardData.content}
                   />
-                  <WorkCard img={cardData.img} />
+                  <WorkCard bgposition={cardData.bgPosition} img={cardData.img} />
                 </ContentWrapper>
               ))}
           </CardContentWrapper>
         </ExploreContent>
+
+        <SkillSetComposition/>
 
         <WorkWithMe />
 

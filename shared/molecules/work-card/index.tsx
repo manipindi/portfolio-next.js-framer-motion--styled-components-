@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const CardWrap: any = styled.div`
   width: 680px;
@@ -7,12 +7,16 @@ const CardWrap: any = styled.div`
   background-image: url(${({ bgImg }: any) => bgImg});
   background-size: cover;
 
+  ${({bgposition}:any)=>bgposition && css`
+    background-position: ${bgposition};
+  `}
+
   @media screen and (max-width: 420px){
     width: 100%;
     height: 360px;
   }
 `;
 
-export default function WorkCard({ img }: any) {
-  return <CardWrap bgImg={img}></CardWrap>;
+export default function WorkCard({ img, bgposition }: any) {
+  return <CardWrap bgposition={bgposition} bgImg={img}></CardWrap>;
 }

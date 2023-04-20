@@ -97,12 +97,12 @@ export default function WorkWithMe() {
   return (
     <Container ref={whyRef}>
       <div className="header">
-        <h1 className="heading">Why work with us</h1>
+        <h1 className="heading">Why work with me</h1>
         <p>
-          Here at Majestyk, strategy is integrated into every single step of our
-          process. Everything from developing an initial mobile strategy, UX/UI
-          best practices in our design and agile project management – we haven’t
-          only perfected what we do but also how we do it.
+          Ability to deliver high-quality and cost-effective solutions . Everything from developing
+          an initial mobile strategy, UX/UI development best practices in
+          agile project management – I haven’t only perfected what I do but
+          also how I do it.
         </p>
       </div>
       <WhenDiagramContainer>

@@ -22,8 +22,12 @@ const FooterContainer = styled.div`
     display: flex;
     gap: 60px;
     .footer-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+
       .composition {
-        margin-top: 20px;
         display: flex;
         gap: 20px;
 
@@ -104,7 +108,7 @@ export default function Footer() {
         <div className="footer-wrapper me">
           <div className="composition">
             <div className="group">
-              <span className="plan">Careers</span>
+              <span className="plan">Experience</span>
               <span className="plan">Projects</span>
               <span className="plan">Technologies</span>
             </div>

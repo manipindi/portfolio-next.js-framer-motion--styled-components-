@@ -36,6 +36,7 @@ export const Content:any = styled.div`
     .link-wrapper{
       display:flex;
       justify-content: flex-end;
+      /* border: 1px solid red; */
     }
 
     ${({position}:any)=> position=== "left" && css`

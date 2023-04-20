@@ -22,7 +22,7 @@ export default function CardContent({
         <h3 className="heading">{heading}</h3>
         <h6 className="content">{content}</h6>
 
-        <div  className="link-wrapper">
+        <div className="link-wrapper">
           <StyledLink href="/">
             <BsChevronRight />
             <span>See More</span>

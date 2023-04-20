@@ -62,13 +62,13 @@ export default function SkillSetComposition() {
       <SkillsWrapper className="inner-wrapper first front-to-back">
         {skillsSet1 &&
           skillsSet1.length &&
-          skillsSet1.map((skill) => <SkillCard skill={skill} />)}
+          skillsSet1.map((skill) => <SkillCard key={skill.technology} skill={skill} />)}
       </SkillsWrapper>
 
       <SkillsWrapper className="inner-wrapper back-to-front">
         {skillsSet2 &&
           skillsSet2.length &&
-          skillsSet2.map((skill) => <SkillCard skill={skill} />)}
+          skillsSet2.map((skill) => <SkillCard key={skill.technology} skill={skill} />)}
       </SkillsWrapper>
     </SkillsetWrapper>
   );

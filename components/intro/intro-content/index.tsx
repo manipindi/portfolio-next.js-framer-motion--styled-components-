@@ -30,7 +30,6 @@ export default function IntroContent() {
           <motion.div
             variants={animatedBgVariants}
             className="intro-animated-text-bg"
-            
           ></motion.div>
         </Link>
       </motion.div>

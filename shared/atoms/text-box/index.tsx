@@ -41,13 +41,32 @@ export default function TextBox({
   scrollYProgress,
   positions,
   values,
+  crosVal,
   ...rest
 }: any) {
-  const { style } = rest;  
+  const { style } = rest;
 
   const scrollXVal = useTransform(scrollYProgress, positions, values);
 
   const opacity = useTransform(scrollYProgress, positions, [0, 1]);
 
-  return <Box style={{ ...style, x: scrollXVal, opacity }}>{children}</Box>;
+  let crosValues;
+  if (crosVal) {
+    console.log(crosVal);
+    
+    crosValues = useTransform(scrollYProgress, positions, crosVal);
+  }
+
+  return (
+    <Box
+      style={{
+        ...style,
+        x: scrollXVal,
+        opacity,
+        left: crosValues,
+      }}
+    >
+      {children}
+    </Box>
+  );
 }

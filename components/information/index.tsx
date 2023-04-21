@@ -45,7 +45,7 @@ export const Intersector = styled(motion.div)`
   transform-origin: top;
   z-index: 10;
 
-  @media screen and (max-width: 820px){
+  @media screen and (max-width: 1024px){
     display: none;
   }
 `;

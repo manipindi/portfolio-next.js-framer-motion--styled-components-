@@ -9,6 +9,7 @@ const Container = styled.div`
   padding: 16px;
   padding-top: 100px;
   background-image: url("https://assets.website-files.com/5e18a1cc86ccdc5d5a0d353d/5e1ca27ec86dfa8720b98540_home-why-background.jpg");
+  background-size: cover;
 
   .header {
     color: white;
@@ -41,21 +42,30 @@ const Container = styled.div`
 const WhenDiagramContainer = styled.div`
   position: relative;
   /* border: 1px solid red; */
-  width: 40%;
+  width: 41%;
   height: 450px;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 840px) {
-    width: 72%;
-    height: 300px;
-    /* display: none; */
+  @media screen and (max-width: 1366px) {
+    width: 42%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1280px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 840px) {
+    width: 72%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 78%;
+  }
+
+  @media screen and (max-width: 440px) {
     width: 350px;
     height: 300px;
-    /* display: none; */
   }
 `;
 

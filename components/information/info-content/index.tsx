@@ -65,7 +65,7 @@ export default function InfoContent() {
         positions={[0, 0.75]}
         values = {isTablet ? ["0%", "-50%"] : ["50%", "100%"] }
         scrollYProgress={scrollYProgress}
-        crosVal = {["0%", "50%"]}
+        crosVal = {["-20%", "50%"]}
         style={isTablet ? { textAlign: "center" , position : "absolute", top:"55%"} : {}}
       >
         <h4>My customers feel the difference and my work shows it.</h4>

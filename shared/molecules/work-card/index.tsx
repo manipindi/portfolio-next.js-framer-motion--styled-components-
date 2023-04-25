@@ -4,11 +4,15 @@ import styled, { css } from "styled-components";
 const CardWrap: any = styled.div`
   width: 680px;
   height: 620px;
-  background-image: url(${({ bgImg }: any) => bgImg});
   background-size: cover;
-
+  
   ${({bgposition}:any)=>bgposition && css`
     background-position: ${bgposition};
+  `}
+
+  ${({bgImg}:any)=>bgImg && css`
+    background-image: url(${bgImg?.src});
+
   `}
 
   @media screen and (max-width: 420px){
@@ -18,5 +22,7 @@ const CardWrap: any = styled.div`
 `;
 
 export default function WorkCard({ img, bgposition }: any) {
+  console.log(img);
+  
   return <CardWrap bgposition={bgposition} bgImg={img}></CardWrap>;
 }

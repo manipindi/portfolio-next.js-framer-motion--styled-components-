@@ -32,8 +32,9 @@ export default function InfoContent() {
   useEffect(() => {
     let mql = window.matchMedia("(max-width: 450px)");
     let tql = window.matchMedia("(max-width: 1024px)");
-    setIsMobile(mql?.matches);
-    setIsTablet(tql?.matches);
+    let portrait = window.matchMedia("(orientation: portrait)");    
+    setIsMobile(mql?.matches && portrait?.matches);
+    setIsTablet(tql?.matches && portrait?.matches);
   }, []);
 
   return (

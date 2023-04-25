@@ -51,9 +51,7 @@ export default function TextBox({
   const opacity = useTransform(scrollYProgress, positions, [0, 1]);
 
   let crosValues;
-  if (crosVal) {
-    console.log(crosVal);
-    
+  if (crosVal) {    
     crosValues = useTransform(scrollYProgress, positions, crosVal);
   }
 

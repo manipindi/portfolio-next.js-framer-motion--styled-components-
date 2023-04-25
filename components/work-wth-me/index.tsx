@@ -2,14 +2,19 @@ import VennBall from "@/shared/atoms/venn-ball";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import styled, { css } from "styled-components";
+import Bg from 'assets/explore/work-with-me/bg.jpeg'
 
-const Container = styled.div`
+const Container:any = styled.div`
   width: 100vw;
   min-height: 100vh;
   padding: 16px;
-  padding-top: 100px;
-  background-image: url("https://assets.website-files.com/5e18a1cc86ccdc5d5a0d353d/5e1ca27ec86dfa8720b98540_home-why-background.jpg");
+  padding: 100px 0;
   background-size: cover;
+  background-attachment: fixed;
+
+  ${({Bg}:any)=> Bg && css`
+    background-image: url(${Bg?.src});
+  `}
 
   .header {
     color: white;
@@ -105,7 +110,7 @@ export default function WorkWithMe() {
   );
 
   return (
-    <Container ref={whyRef}>
+    <Container Bg={Bg} ref={whyRef}>
       <div className="header">
         <h1 className="heading">Why work with me</h1>
         <p>

@@ -3,10 +3,11 @@ import Navbar from "shared/molecules/navbar";
 import { StyledSection } from "./styles";
 import IntroContent from "./intro-content";
 import styled from "styled-components";
+import IntroBg from 'assets/intro/intro-bg.jpeg'
 
 export default function IntroSection() {
   return (
-    <StyledSection>
+    <StyledSection IntroBg={IntroBg}>
       <Navbar />
       <IntroContent />
 

@@ -1,15 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledSection:any = styled.section`
   width: 100vw;
   height: 100vh;
-  background-image: url("https://assets.website-files.com/5e18a1cc86ccdc5d5a0d353d/5ea6f258e4a9f9ebe47d31e5_homepage-hero-w3award.jpg");
   color: white;
   padding: 3rem 6rem;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   overflow: hidden;
+
+  ${({IntroBg}:any)=> IntroBg && css`
+    background-image: url(${IntroBg?.src});
+  `}
 
   .scroll-tag{
     position: absolute;
@@ -29,5 +32,9 @@ export const StyledSection = styled.section`
 
   @media screen and (max-width: 420px){
     padding: 32px;
+  }
+
+  @media screen and (max-width: 700px) and (orientation: landscape){
+    padding: 2rem 4rem;
   }
 `;

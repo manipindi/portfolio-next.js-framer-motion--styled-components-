@@ -44,4 +44,13 @@ export const IntroContentWrap = styled(motion.div)`
       padding: 0 11px;
     }
   }
+
+  @media screen and (max-width: 700px) and (orientation: landscape){
+    font-size: 20px;
+    width: 340px;
+    margin-top: 30px;
+    .inline-element{
+      padding: 0 13px;
+    }
+  }
 `;

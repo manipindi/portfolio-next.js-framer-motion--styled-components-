@@ -1,17 +1,23 @@
 import TextBox from "@/shared/atoms/text-box";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import InfoContent from "./info-content";
 import Explore from "../explore";
+import BgConfetti from "assets/intro/info-bg-confetti.png";
 
-const InformationWrapper = styled(motion.div)`
+const InformationWrapper: any = styled(motion.div)`
   width: 100vw;
   min-height: 100vh;
   background-color: #000;
   z-index: 0;
   position: relative;
-  background-image: url("https://assets.website-files.com/5e18a1cc86ccdc5d5a0d353d/5e18db68769c13be857fc990_home-stars-2.png");
+
+  ${({ BgConfetti }: any) =>
+    BgConfetti &&
+    css`
+      background-image: url(${BgConfetti?.src});
+    `}
 `;
 const Circle = styled(motion.div)`
   width: 80px;
@@ -26,7 +32,7 @@ const Circle = styled(motion.div)`
   margin-right: auto;
   z-index: -1;
 
-  @media screen and (max-width: 840px){
+  @media screen and (max-width: 840px) {
     display: none;
   }
 `;
@@ -45,16 +51,16 @@ export const Intersector = styled(motion.div)`
   transform-origin: top;
   z-index: 10;
 
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
     display: none;
   }
 `;
 
 export default function Information() {
-  const Inforef = useRef(null)
+  const Inforef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target : Inforef,
-    offset : ["start end", "start start"]
+    target: Inforef,
+    offset: ["start end", "start start"],
   });
   const scaleIM = useTransform(
     scrollYProgress,
@@ -63,7 +69,7 @@ export default function Information() {
   );
 
   return (
-    <InformationWrapper ref={Inforef}>
+    <InformationWrapper BgConfetti={BgConfetti} ref={Inforef}>
       <Circle style={{ scale: scaleIM }} />
       <InfoContent />
     </InformationWrapper>

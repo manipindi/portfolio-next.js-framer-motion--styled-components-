@@ -17,7 +17,7 @@ import Footer from "../footer";
 import SkillSetComposition from "../skill-set";
 
 const CardContentWrapper = styled.div`
-  margin-top: 500px;
+  margin-top: 700px;
   position: relative;
 `;
 
@@ -71,13 +71,16 @@ export default function Explore() {
                     heading={cardData.heading}
                     content={cardData.content}
                   />
-                  <WorkCard bgposition={cardData.bgPosition} img={cardData.img} />
+                  <WorkCard
+                    bgposition={cardData.bgPosition}
+                    img={cardData.img}
+                  />
                 </ContentWrapper>
               ))}
           </CardContentWrapper>
         </ExploreContent>
 
-        <SkillSetComposition/>
+        <SkillSetComposition />
 
         <WorkWithMe />
 

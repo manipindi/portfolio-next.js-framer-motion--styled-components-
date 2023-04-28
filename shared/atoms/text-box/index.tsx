@@ -15,7 +15,20 @@ const Box = styled(motion.div)`
     font-size: 22px;
     text-align: center;
     margin-bottom: 100px;
-    /* transform: none !important; */
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 345px;
+    font-size: 34px;
+  }
+
+  @media screen and (min-width: 1900px) {
+    width: 430px;
+    font-size: 40px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    width: 500px;
   }
 `;
 
@@ -51,7 +64,8 @@ export default function TextBox({
   const opacity = useTransform(scrollYProgress, positions, [0, 1]);
 
   let crosValues;
-  if (crosVal) {    
+  if (crosVal) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     crosValues = useTransform(scrollYProgress, positions, crosVal);
   }
 

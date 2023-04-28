@@ -32,7 +32,7 @@ export default function InfoContent() {
   useEffect(() => {
     let mql = window.matchMedia("(max-width: 450px)");
     let tql = window.matchMedia("(max-width: 1024px)");
-    let portrait = window.matchMedia("(orientation: portrait)");    
+    let portrait = window.matchMedia("(orientation: portrait)");
     setIsMobile(mql?.matches && portrait?.matches);
     setIsTablet(tql?.matches && portrait?.matches);
   }, []);
@@ -43,41 +43,55 @@ export default function InfoContent() {
       <TextBox
         scrollYProgress={scrollYProgress}
         positions={[0, 0.25]}
-        values = {isTablet ? ["0%", "-50%"] : ["50%", "100%"] }
-        crosVal = {["0%", "50%"]}
-        style={isTablet ? { textAlign: "center" , position : "absolute",  top:"15%"} : {}}
+        values={isTablet ? ["0%", "-50%"] : ["50%", "100%"]}
+        crosVal={["0%", "50%"]}
+        style={
+          isTablet
+            ? { textAlign: "center", position: "absolute", top: "15%" }
+            : {}
+        }
       >
-        <h4>
-          Building scalable web applications from future.
-        </h4>
+        <h4>Building scalable web applications from future.</h4>
       </TextBox>
 
       <TextBox
         scrollYProgress={scrollYProgress}
         positions={[0, 0.5]}
-        values = {isTablet ? ["0%", "-50%"] : ["70vw", "55vw"]}
-        crosVal = {["100%", "50%"]}
-        style={isTablet ? { textAlign: "center" , position : "absolute", top:"35%"} : {textAlign: "left"}}
+        values={isTablet ? ["0%", "-50%"] : ["70vw", "55vw"]}
+        crosVal={["100%", "50%"]}
+        style={
+          isTablet
+            ? { textAlign: "center", position: "absolute", top: "35%" }
+            : { textAlign: "left" }
+        }
       >
         <h4>No nonsense. Just great products with great speed.</h4>
       </TextBox>
 
       <TextBox
         positions={[0, 0.75]}
-        values = {isTablet ? ["0%", "-50%"] : ["50%", "100%"] }
+        values={isTablet ? ["0%", "-50%"] : ["50%", "100%"]}
         scrollYProgress={scrollYProgress}
-        crosVal = {["-20%", "50%"]}
-        style={isTablet ? { textAlign: "center" , position : "absolute", top:"55%"} : {}}
+        crosVal={["-30%", "50%"]}
+        style={
+          isTablet
+            ? { textAlign: "center", position: "absolute", top: "55%" }
+            : {}
+        }
       >
         <h4>My customers feel the difference and my work shows it.</h4>
       </TextBox>
 
       <TextBox
         positions={[0, 1]}
-        values = {isTablet ? ["0", "-50%"] : ["70vw", "55vw"]}
+        values={isTablet ? ["0", "-50%"] : ["70vw", "55vw"]}
         scrollYProgress={scrollYProgress}
-        crosVal = {["100%", "50%"]}
-        style={isTablet ? { textAlign: "center" , position : "absolute", top:"75%"} : {textAlign: "left"}}
+        crosVal={["100%", "50%"]}
+        style={
+          isTablet
+            ? { textAlign: "center", position: "absolute", top: "75%" }
+            : { textAlign: "left" }
+        }
       >
         <h4>Let&apos;s collaborate and build great products together.</h4>
       </TextBox>

@@ -16,7 +16,7 @@ export const ExploreContentWrapper = styled(motion.div)`
 
 export const ExploreWrapper = styled(motion.div)`
   width: 100vw;
-  min-height: 180vh;
+  min-height: 150vh;
   background-color: #000;
   position: relative;
   background-image: url("https://assets.website-files.com/5e18a1cc86ccdc5d5a0d353d/5e18db68769c13be857fc990_home-stars-2.png");
@@ -32,8 +32,8 @@ export const InterSector = styled(motion.div)`
   bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  
-  @media screen and (max-width: 1028px){
+
+  @media screen and (max-width: 1028px) {
     display: none;
   }
 `;

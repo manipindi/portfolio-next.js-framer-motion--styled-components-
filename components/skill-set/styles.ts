@@ -83,4 +83,12 @@ export const SkillCardWrapper = styled(motion.div)`
   .one {
     margin-bottom: 12px;
   }
+
+  @media screen and (min-width: 1900px) {
+    padding: 3rem;
+
+    .technology {
+      font-size: 22px;
+    }
+  }
 `;

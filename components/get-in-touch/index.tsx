@@ -9,7 +9,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 420px){
+  @media screen and (max-width: 420px) {
     min-height: 70vh;
   }
 `;
@@ -43,15 +43,31 @@ const Content = styled(motion.div)`
     margin-top: 56px;
   }
 
-  @media screen and (max-width: 420px){
-    .tag{
+  @media screen and (max-width: 420px) {
+    .tag {
       font-size: 12px;
     }
-    .heading{
+    .heading {
       font-size: 36px;
     }
-    .get-in-touch-btn{
+    .get-in-touch-btn {
       margin-top: 36px;
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    .tag {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+
+    .heading {
+      font-size: 60px;
+    }
+
+    .get-in-touch-btn {
+      font-size: 20px;
+      padding: 20px 26px;
     }
   }
 `;

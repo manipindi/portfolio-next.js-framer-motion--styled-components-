@@ -1,16 +1,21 @@
-import Image from 'next/image'
-import React from 'react'
-import Icon from 'assets/intro/page-icon.svg'
-import styled from 'styled-components'
+import Image from "next/image";
+import React from "react";
+import Icon from "assets/intro/page-icon.svg";
+import styled from "styled-components";
 
 const StyledDiv = styled.div`
-    /* border: 1px solid red;s */
-`
+  @media screen and (min-width: 1900px) {
+    .icon {
+      width: 80px;
+      height: 80px;
+    }
+  }
+`;
 
 export default function Navbar() {
   return (
     <StyledDiv>
-        <Image src={Icon} alt='icon-logo'/>
+      <Image src={Icon} className="icon" alt="icon-logo" />
     </StyledDiv>
-  )
+  );
 }

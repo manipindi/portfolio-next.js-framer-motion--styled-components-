@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import React from 'react'
-import styled from 'styled-components';
+import { motion } from "framer-motion";
+import React from "react";
+import styled from "styled-components";
 
 const Circle: any = styled(motion.div)`
   width: 250px;
@@ -16,16 +16,18 @@ const Circle: any = styled(motion.div)`
   align-items: center;
   color: white;
 
-  @media screen and (max-width: 420px){
+  @media screen and (max-width: 420px) {
     width: 150px;
     height: 150px;
   }
+
+  @media screen and (min-width: 1900px) {
+    width: 350px;
+    height: 350px;
+    font-size: 24px;
+  }
 `;
 
-export default function VennBall({children, ...rest}:any) {
-  return (
-    <Circle {...rest}>
-        {children}
-    </Circle>
-  )
+export default function VennBall({ children, ...rest }: any) {
+  return <Circle {...rest}>{children}</Circle>;
 }

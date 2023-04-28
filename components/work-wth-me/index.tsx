@@ -2,9 +2,9 @@ import VennBall from "@/shared/atoms/venn-ball";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import styled, { css } from "styled-components";
-import Bg from 'assets/explore/work-with-me/bg.jpeg'
+import Bg from "assets/explore/work-with-me/bg.jpeg";
 
-const Container:any = styled.div`
+const Container: any = styled.div`
   width: 100vw;
   min-height: 100vh;
   padding: 16px;
@@ -12,9 +12,11 @@ const Container:any = styled.div`
   background-size: cover;
   background-attachment: fixed;
 
-  ${({Bg}:any)=> Bg && css`
-    background-image: url(${Bg?.src});
-  `}
+  ${({ Bg }: any) =>
+    Bg &&
+    css`
+      background-image: url(${Bg?.src});
+    `}
 
   .header {
     color: white;
@@ -42,35 +44,37 @@ const Container:any = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 1900px) {
+    .header {
+      max-width: 900px;
+      h1 {
+        font-size: 60px;
+        margin: 20px 0;
+      }
+      p {
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
+  }
 `;
 
 const WhenDiagramContainer = styled.div`
   position: relative;
-  /* border: 1px solid red; */
-  width: 41%;
+  width: 580px;
   height: 450px;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 1366px) {
-    width: 42%;
-  }
-
-  @media screen and (max-width: 1280px) {
-    width: 45%;
-  }
-
-  @media screen and (max-width: 840px) {
-    width: 72%;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 78%;
-  }
-
   @media screen and (max-width: 440px) {
-    width: 350px;
+    width: 344px;
     height: 300px;
+  }
+
+  @media screen and (min-width: 1900px) {
+    width: 800px;
+    height: 650px;
   }
 `;
 
@@ -114,10 +118,10 @@ export default function WorkWithMe() {
       <div className="header">
         <h1 className="heading">Why work with me</h1>
         <p>
-          Ability to deliver high-quality and cost-effective solutions . Everything from developing
-          an initial mobile strategy, UX/UI development best practices in
-          agile project management – I haven’t only perfected what I do but
-          also how I do it.
+          Ability to deliver high-quality and cost-effective solutions .
+          Everything from developing an initial mobile strategy, UX/UI
+          development best practices in agile project management – I haven’t
+          only perfected what I do but also how I do it.
         </p>
       </div>
       <WhenDiagramContainer>

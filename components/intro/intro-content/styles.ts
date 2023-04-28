@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const IntroContentWrap = styled(motion.div)`
+export const IntroContentWrap = styled(motion.section)`
   width: 550px;
   margin-top: 8rem;
   font-size: 36px;
@@ -28,29 +28,35 @@ export const IntroContentWrap = styled(motion.div)`
     }
   }
 
-  @media screen and (max-width: 420px){
+  @media screen and (max-width: 420px) {
     width: auto;
     font-size: 21px;
     line-height: 50px;
     text-align: center;
 
-    .inline-element{
+    .inline-element {
       padding: 0 13px;
     }
   }
-  @media screen and (max-width: 380px){
+  @media screen and (max-width: 380px) {
     font-size: 19px;
-    .inline-element{
+    .inline-element {
       padding: 0 11px;
     }
   }
 
-  @media screen and (max-width: 700px) and (orientation: landscape){
+  @media screen and (max-width: 700px) and (orientation: landscape) {
     font-size: 20px;
     width: 340px;
     margin-top: 30px;
-    .inline-element{
+    .inline-element {
       padding: 0 13px;
     }
+  }
+
+  @media screen and (min-width: 1900px) {
+    width: 750px;
+    font-size: 44px;
+    line-height: 76px;
   }
 `;
